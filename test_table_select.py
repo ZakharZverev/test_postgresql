@@ -5,7 +5,8 @@ print('Database opened')
 
 cur=con.cursor()
 
-cur.execute("SELECT ID, NAME, AGE, COURSE fron CLIENTS")
+cur.execute("SELECT ID, NAME, AGE, COURSE from CLIENTS where AGE > %s", (18))
+
 rows=cur.fetchall()
 
 for row in rows:
